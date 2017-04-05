@@ -10,14 +10,16 @@ To use this code:
      
      Queue        -- Scrims_ProjectQueueble.cls
      
-     Scheduling   -- Scrims_ProjectBatch.cls
-     
+     Scheduling   -- Scrims_ProjectBatch.cls     
                      Scrims_ProjectSchedulable.cls
                      
                      
 4) Find all Visual Force pages in the folder ScrimsSandbox/src/pages/
+
      Angular2 App           -- ScrimsMain.page
+     
      Simple CRUD with Rest  -- Scrims_QueueTest.page
+     
      
 5) Find Triggers , Static resources, objects in their respective folders.
 

@@ -1,0 +1,172 @@
+<apex:page >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <apex:includeScript value="{!URLFOR($Resource.ForceTK, '/ForceTK/forcetk.js')}"/>
+
+  
+   
+    <div>
+        <input  class="btn" value="Get Project list" type="button" onclick="getSobjectList()" />
+        <input  class="btn" value="Create Project" type="button" onclick="createSobjectRecord()" />
+        <input class="btn" value="Delete Project" type="button" onclick="deleteSobjectRecord()" />
+    </div>
+    <div id="projectList">
+        <table style="width: 100%">
+             <thead>
+                  <tr>
+                       <th>Id</th>
+                       <th>Name</th>
+                       <th>Status</th>
+                       <th>UniqueID</th>
+                   </tr>
+             </thead>
+             <tbody id="tbody">
+             </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+     var proxy = 'https://cors-anywhere.herokuapp.com/';
+       var sessionId = '';
+
+        function getSobjectList() {
+
+           /* $.ajax(
+            {
+                type:"POST",
+                url:proxy+"https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9i1HRpGLXp.rBO3x02i.wETdIeveYIbbSa0fF67F4CFZax2ovrt9sJPcptn7rS5qu6oc5oIrVCpsxllUs&client_secret=2464776595749956934&username=urs.ravis@live.com&password=sravanthi@9",
+              crossDomain : true,
+                dataType: 'json',
+
+                success:function(responseData)
+                {
+                    sessionId=responseData.access_token;
+
+                    console.log(sessionId);
+                    GetProjects(sessionId);
+                },
+                error:function(request,status,error)
+                {
+                 console.log("error"+error);
+                    console.log(request.responseText);
+                }
+            });*/
+            GetProjects(sessionId);
+
+
+                    console.log('completed');
+
+
+
+        }
+    function GetProjects(sessionId)
+    {
+          var forceTKClient = new forcetk.Client();
+
+            forceTKClient.setSessionToken('{!$Api.Session_ID}');
+
+
+            forceTKClient.apexrest(
+            '/services/apexrest/projects',
+
+                function(data, textStatus, jqXHR) {
+
+                    console.log('SUCCESS - ' + data);
+          $.each(data, function (index, item) {
+                 var eachrow = "<tr>"
+                             + "<td>" + item['Id'] + "</td>"
+                             + "<td>" + item['Name'] + "</td>"
+                             + "<td>" + item['ProjectStatus__c'] + "</td>"
+                             + "<td>" + item['ProjectUniqueID__c'] + "</td>"
+                             + "</tr>";
+                 $('#tbody').append(eachrow);
+            });
+
+                },
+
+                function(jqXHR, textStatus, errorThrown) {
+
+                    console.log('ERROR - ' + textStatus);
+
+                },
+
+                'GET',
+
+                '',
+
+                null,
+
+                false
+
+            );
+    }
+
+        var recordId;
+        function createSobjectRecord() {
+             var projectInfo = { "name" :"Testing Jquery with Rest","wprCode":"WPRCode1"};
+             var projectInfoJson = JSON.stringify(projectInfo);
+         var forceTKClient = new forcetk.Client();
+            forceTKClient.setSessionToken('{!$Api.Session_ID}');
+
+            forceTKClient.apexrest(
+            '/services/apexrest/projects',
+                function(data, textStatus, jqXHR) {
+
+                    console.log('SUCCESS - ' + data);
+            GetProjects(sessionId);   
+           
+
+                },
+
+                function(jqXHR, textStatus, errorThrown) {
+
+                    console.log('ERROR - ' + textStatus);
+
+                },
+
+                'POST',
+
+                projectInfoJson,
+
+                null,
+
+                false
+
+            );
+             /*$.ajax({
+                type: "POST",
+                url: "/services/data/v35.0/sobjects/Account",
+                headers : {
+                        'Authorization' : "OAuth " + sessionId,
+                        'Content-Type' : 'application/json'
+                  },
+                crossDomain : true,
+                data: JSON.stringify(accountInfo),
+                dataType: 'json',
+                success: function (responseData, status, xhr) {
+                    console.log(responseData.id);
+                    recordId = responseData.id;
+                },
+                error: function (request, status, error) {
+                    console.log(request.responseText);
+                }
+            });*/
+        }
+        function deleteSobjectRecord(){
+            $.ajax({
+                type: "Delete",
+                url: "/services/data/v35.0/sobjects/Account/"+recordId,
+                headers : {
+                        'Authorization' : "OAuth " + sessionId,
+                        'Content-Type' : 'application/json'
+                  },
+                crossDomain : true,
+                success: function (responseData, status, xhr) {
+                    console.log(responseData);
+                },
+                error: function (request, status, error) {
+                    console.log(request.responseText);
+                }
+            });
+        }
+    </script>
+</apex:page>

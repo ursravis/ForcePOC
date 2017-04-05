@@ -1,0 +1,308 @@
+<apex:page sidebar="false" showHeader="false" >
+   
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>Force.com Test Page</title>
+
+  <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+<!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <apex:includeScript value="{!URLFOR($Resource.ForceTK, '/ForceTK/forcetk.js')}"/>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Scrims Test App</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#">Admin</a>
+                    </li>
+                    <li>
+                        <a href="#">Reports</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                 <!--<apex:image url="{!$Resource.project}" width="50" height="50"/>-->
+                <!--<img src="{!$Resource.project}" width="50" height="50"/>-->
+
+                <h1>A Simple page to Test Rest API</h1>
+     
+   
+    <div>
+        <br/>
+        <br/>
+        <input  class="btn" value="Get Project list" type="button" onclick="getSobjectList()" />
+        <input  class="btn" value="Create Project" type="button" onclick="createSobjectRecord()" />
+        <input class="btn" value="Delete Project" type="button" onclick="deleteSobjectRecord()" />
+    </div>
+                <div>
+                  <!--<input type="file"    id="filePhoto"   onchange='uploadFile(this)'/>-->
+                </div>
+                <br/>
+    <div id="projectList">
+        <table style="width: 100%; horizontal-align:center">
+             <thead>
+                  <tr>
+                       <th>Id</th>
+                       <th>Name</th>
+                       <th>Status</th>
+                       <th>UniqueID</th>
+                   </tr>
+             </thead>
+            
+             <tbody id="tbody">
+             </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+     var proxy = 'https://cors-anywhere.herokuapp.com/';
+       var sessionId = '';
+
+        function getSobjectList() {
+        GetProjects();
+       console.log('completed');
+
+        }
+         function GetProjects()
+        {
+          var forceTKClient = new forcetk.Client();
+            forceTKClient.setSessionToken('{!$Api.Session_ID}');
+            forceTKClient.apexrest(
+            '/services/apexrest/projects',
+
+                function(data, textStatus, jqXHR) {
+         $('#tbody').empty();
+                    console.log('SUCCESS - ' + data);
+          $.each(data, function (index, item) {
+                 var eachrow = "<tr>"
+                             + "<td>" + item['Id'] + "</td>"
+                             + "<td>" + item['Name'] + "</td>"
+                             + "<td>" + item['ProjectStatus__c'] + "</td>"
+                             + "<td>" + item['ProjectUniqueID__c'] + "</td>"
+                             + "</tr>";
+                 $('#tbody').append(eachrow);
+            });
+
+                },
+
+                function(jqXHR, textStatus, errorThrown) {
+                    console.log('ERROR - ' + textStatus);
+                },
+                'GET',
+                '',
+                null,
+                false
+
+            );
+    }
+
+
+        var recordId;
+        function createSobjectRecord() {
+              var projectInfo = { "name" :"Testing Jquery with Rest","wprCode":"WPRCode1"};
+             var projectInfoJson = JSON.stringify(projectInfo);
+         var forceTKClient = new forcetk.Client();
+            forceTKClient.setSessionToken('{!$Api.Session_ID}');
+
+            forceTKClient.apexrest(
+            '/services/apexrest/projects',
+                function(data, textStatus, jqXHR) {
+                    console.log('SUCCESS - ' + data);
+                     GetProjects();
+
+
+                },
+
+                function(jqXHR, textStatus, errorThrown) {
+
+                    console.log('ERROR - ' + textStatus);
+
+                },
+
+                'POST',
+
+                projectInfoJson,
+
+                null,
+
+                false
+
+            );
+        }
+        function deleteSobjectRecord(){
+            $.ajax({
+                type: "Delete",
+                url: "/services/data/v35.0/sobjects/Account/"+recordId,
+                headers : {
+                        'Authorization' : "OAuth " + sessionId,
+                        'Content-Type' : 'application/json'
+                  },
+                crossDomain : true,
+                success: function (responseData, status, xhr) {
+                    console.log(responseData);
+                },
+                error: function (request, status, error) {
+                    console.log(request.responseText);
+                }
+            });
+        }
+                function uploadFile(elm)
+                {
+                    var files=elm.files;
+                    var reader= new FileReader();
+                    reader.addEventListener("load",(event)=>{
+                        var dataFile=event.target.result;
+                          var base64Mark = 'base64,';
+                        var dataStart = dataFile.indexOf(base64Mark) + base64Mark.length;
+                        dataFile = dataFile.substring(dataStart);
+                        //console.log(dataFile);
+                        uploadWithChunks(dataFile);
+                    },false);
+
+                reader.readAsDataURL(files[0]);
+                }
+                var   CHUNK_SIZE= 950000;
+                function uploadWithChunks(datafile)
+                {
+
+                     var fromPos = 0;
+                    var toPos = Math.min(datafile.length, fromPos + this.CHUNK_SIZE);
+
+                    // start with the initial chunk
+                    this.uploadChunk( datafile, fromPos, toPos, '');
+                }
+                function uploadChunk( fileContents, fromPos, toPos, attachId)
+                {
+                      var parentid="a0146000000vOizAAE";
+                    var chunk = fileContents.substring(fromPos, toPos);
+                    var attachChunk={ parentId:parentid,fileName:'Testdoc.txt',base64Data:chunk,contentType:'text/plain',fileId:attachId};
+
+                      $.ajax({
+                                type: "POST",
+                                 url: proxy+"https://na40.salesforce.com/services/apexrest/CI",
+                                headers : {
+                                        'Authorization' : "OAuth " + sessionId,
+                                        'Content-Type' : 'application/json'
+                                  },
+                                crossDomain : true,
+                                data: JSON.stringify(attachChunk),
+                                dataType: 'json',
+                                success: function (responseData, status, xhr) {
+                                    console.log("Success one");
+
+                                    attachId = responseData;
+
+                                    fromPos = toPos;
+                                    toPos = Math.min(fileContents.length, fromPos + self.CHUNK_SIZE);
+                                    if (fromPos < toPos) {
+                                        self.uploadChunk(fileContents, fromPos, toPos, attachId);
+                                    }
+
+                                },
+                                error: function (request, status, error) {
+                                    console.log(request.responseText);
+                                    alert("Failed to upload")
+                                }});
+                }
+                function uploadTOServer(dataFile)
+                {
+                      var clearanceItem = {
+                                    "item": {
+                                        "Name": "From Rest"
+                                    },
+                                    "attachments": [{
+                                        "Body": dataFile,
+                                        "ContentType": "text/plain",
+                                        "Name": "bigFile.txt"
+                                    }]
+                                };
+             $.ajax({
+                type: "POST",
+                 url: proxy+"https://na40.salesforce.com/services/apexrest/CI",
+                headers : {
+                        'Authorization' : "OAuth " + sessionId,
+                        'Content-Type' : 'application/json'
+                  },
+                crossDomain : true,
+                data: JSON.stringify(clearanceItem),
+                dataType: 'json',
+                success: function (responseData, status, xhr) {
+                    alert("Saved Successfully")
+
+
+                },
+                error: function (request, status, error) {
+                    console.log(request.responseText);
+                    alert("Failed to upload")
+                }});
+
+                }
+    </script>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+
+
+</body>
+
+</html>
+
+
+    
+
+</apex:page>

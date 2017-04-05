@@ -1,0 +1,13 @@
+
+System.schedule('Scrims Project  1',  '0 00 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 2',  '0 05 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 3',  '0 10 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 4',  '0 15 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 5',  '0 20 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 6',  '0 25 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 7',  '0 30 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 8',  '0 35 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 9',  '0 40 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 10', '0 45 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 11', '0 50 * * * ?', new Scrims_ProjectSchedulable());
+System.schedule('Scrims Project 12', '0 55 * * * ?', new Scrims_ProjectSchedulable());

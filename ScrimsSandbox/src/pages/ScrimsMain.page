@@ -1,0 +1,32 @@
+<apex:page sidebar="false" showHeader="false">
+
+<html>
+<head>
+    <!-- base url -->
+    <base href="/apex/ScrimsIndex"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+  <title>Smart Album</title>
+
+    <meta name="description" content="Smart Album"/>
+    <link rel="manifest" href="{!URLFOR($Resource.ScrimsApp, '/assets/manifest.json')}"/>
+    <meta name="msapplication-TileColor" content="#00bcd4"/>
+    <meta name="msapplication-TileImage" content="{!URLFOR($Resource.ScrimsApp, '/assets/icon/ms-icon-144x144.png')}"/>
+    <meta name="theme-color" content="#00bcd4"/>
+    </head>
+
+<body>
+
+  <app>
+   <i class="center-fix main-spinner fa fa-spin fa-spinner" ></i>
+  </app>
+    <script src="{!URLFOR($Resource.ScrimsApp, '/polyfills.bundle.js')}" type="text/javascript" ></script>
+    <script src="{!URLFOR($Resource.ScrimsApp, '/vendor.bundle.js')}" type="text/javascript" ></script>
+    <script src="{!URLFOR($Resource.ScrimsApp, '/main.bundle.js')}" type="text/javascript" ></script>
+
+
+</body>
+</html>
+</apex:page>

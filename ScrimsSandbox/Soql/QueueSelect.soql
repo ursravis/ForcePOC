@@ -1,0 +1,15 @@
+SELECT 
+	CreatedById, 
+	CreatedDate, 
+	EntityID__c, 
+	EntityName__c, 
+	Id, 
+	IsDeleted, 
+	LastModifiedById, 
+	LastModifiedDate, 
+	Name, 
+	OwnerId, 
+	RetryCount__c, 
+	Status__c, 
+	SystemModstamp 
+FROM Scrims_QueueData__c

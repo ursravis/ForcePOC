@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e18e19b6-c8dc-4722-ad93-ac53c292ec7a}</ProjectGuid>
+    <Login></Login>
+    <Password></Password>
+    <SecurityToken></SecurityToken>
+    <Domain>test</Domain>
+    <Environment>1</Environment>
+    <ApexVersion>39.0</ApexVersion>
+    <Name>ScrimsSandbox</Name>
+    <AssemblyName>ScrimsSandbox</AssemblyName>
+    <RootNamespace>ScrimsSandbox</RootNamespace>
+    <ProjectVersion>5</ProjectVersion>
+    <PackageVersion>1.6.4.4</PackageVersion>
+    <SyncOption>True</SyncOption>
+    <AntSupport>False</AntSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Folder Include="AnonymousApex" />
+    <Folder Include="aura\" />
+    <Folder Include="aura\Component\" />
+    <Folder Include="classes\" />
+    <Folder Include="components\" />
+    <Folder Include="objects\" />
+    <Folder Include="pages\" />
+    <Folder Include="RestServices" />
+    <Folder Include="Soql" />
+    <Folder Include="staticresources\" />
+    <Folder Include="staticresources\ScrimsApp\" />
+    <Folder Include="staticresources\ScrimsApp\assets\" />
+    <Folder Include="staticresources\ScrimsApp\assets\icon\" />
+    <Folder Include="staticresources\ScrimsApp\assets\img\" />
+    <Folder Include="staticresources\ScrimsApp\assets\mock-data\" />
+    <Folder Include="staticresources\ScrimsApp\assets\styles\" />
+    <Folder Include="staticresources\SiteSamples\" />
+    <Folder Include="staticresources\SiteSamples\img\" />
+    <Folder Include="triggers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aura\Component\Component.cmp">
+      <PhysicalRelativePath>src\aura\Component\Component.cmp</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Adi00000008pE7CAI</Id>
+      <LastModifiedDateUtcTicks>131317776570000000</LastModifiedDateUtcTicks>
+      <Hash>gA00TVSL+LcM+V8bMRbSsw==</Hash>
+      <BundleName>Component</BundleName>
+      <LightningType>Component</LightningType>
+    </Compile>
+    <Compile Include="aura\Component\ComponentController.js">
+      <PhysicalRelativePath>src\aura\Component\ComponentController.js</PhysicalRelativePath>
+      <SubType>AuraDefinitionBundle</SubType>
+      <Id>0Adi00000008pE8CAI</Id>
+      <LastModifiedDateUtcTicks>131317776570000000</LastModifiedDateUtcTicks>
+      <Hash>E2tLejuvFkI3/Y0kRcMSwA==</Hash>
+      <BundleName>Component</BundleName>
+      <LightningType>Controller</LightningType>
+    </Compile>   
+    <Compile Include="classes\Scrims_ProjectBatch.cls">
+      <SubType>Class</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectBatch.cls</PhysicalRelativePath>
+      <Id>01p0j000000CzH7AAK</Id>
+      <Hash>ymbflEmyjmBmsw/9qCoqxQ==</Hash>
+      <LastModifiedDateUtcTicks>131351307850000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexClass</MetadataType>
+    </Compile>
+    <Compile Include="classes\Scrims_ProjectQueueble.cls">
+      <SubType>Class</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectQueueble.cls</PhysicalRelativePath>
+      <Id>01p0j000000CzBdAAK</Id>
+      <Hash>kYhGzUQorzrB+HH7v4+Pnw==</Hash>
+      <LastModifiedDateUtcTicks>131351275260000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexClass</MetadataType>
+    </Compile>
+    <Compile Include="classes\Scrims_ProjectSchedulable.cls">
+      <SubType>Class</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectSchedulable.cls</PhysicalRelativePath>
+      <Id>01p0j000000CzJ3AAK</Id>
+      <Hash>YmxIOKqgutUaXwV39A7ckA==</Hash>
+      <LastModifiedDateUtcTicks>131351284500000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexClass</MetadataType>
+    </Compile>
+    <Compile Include="classes\Scrims_ProjectService.cls">
+      <SubType>Class</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectService.cls</PhysicalRelativePath>
+      <Id>01p0j000000CwuGAAS</Id>
+      <Hash>6nt8g4FXb3pjaLyouDV7WA==</Hash>
+      <LastModifiedDateUtcTicks>131352152860000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexClass</MetadataType>
+    </Compile>
+   
+    <Compile Include="objects\Scrims_Project__c.object">
+      <PhysicalRelativePath>src\objects\Scrims_Project__c.object</PhysicalRelativePath>
+      <SubType>Object</SubType>
+      <Id>01I0j0000004PkCEAU</Id>
+      <LastModifiedDateUtcTicks>131347785257418205</LastModifiedDateUtcTicks>
+      <Hash>bRX8pFvFscaf6ayRB2+i9w==</Hash>
+    </Compile>
+   
+    <Compile Include="pages\ScrimsMain.page">
+      <PhysicalRelativePath>src\pages\ScrimsMain.page</PhysicalRelativePath>
+      <SubType>Page</SubType>
+      <Id>0660j0000004J1pAAE</Id>
+      <LastModifiedDateUtcTicks>131347761450000000</LastModifiedDateUtcTicks>
+      <Hash>kkPBkDPOVtSau+ahmUoDDg==</Hash>
+    </Compile>
+    <Compile Include="pages\ScrimsTest.page">
+      <SubType>Page</SubType>
+      <PhysicalRelativePath>src\pages\ScrimsTest.page</PhysicalRelativePath>
+      <Id>0660j0000004J3MAAU</Id>
+      <Hash>yHhm6RPGq0XWOMyMnpau5A==</Hash>
+      <LastModifiedDateUtcTicks>131348703610000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexPage</MetadataType>
+    </Compile>
+    <Compile Include="pages\Scrims_QueueTest.page">
+      <SubType>Page</SubType>
+      <PhysicalRelativePath>src\pages\Scrims_QueueTest.page</PhysicalRelativePath>
+      <Id>0660j0000004Jh2AAE</Id>
+      <Hash>bG6VKRKCzh1iD+JdMpBuBw==</Hash>
+      <LastModifiedDateUtcTicks>131358864800000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexPage</MetadataType>
+    </Compile>
+    
+    <Compile Include="triggers\Scrims_Project.trigger">
+      <SubType>Trigger</SubType>
+      <PhysicalRelativePath>src\triggers\Scrims_Project.trigger</PhysicalRelativePath>
+      <Id>01q0j000000CcvTAAS</Id>
+      <Hash>SSftfI3B8dFdQCD9FNsDmg==</Hash>
+      <LastModifiedDateUtcTicks>131351280100000000</LastModifiedDateUtcTicks>
+      <MetadataType>ApexTrigger</MetadataType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <StaticZip Include="staticresources\ScrimsApp">
+      <SubType>StaticResourceZip</SubType>
+      <Id>0810j0000004FN8AAM</Id>
+      <LastModifiedDateUtcTicks>131347761440000000</LastModifiedDateUtcTicks>
+      <Hash>Ke8LhBriCj6G08/+GBPgeQ==</Hash>
+    </StaticZip>
+    <StaticZip Include="staticresources\SiteSamples">
+      <SubType>StaticResourceZip</SubType>
+      <Id>081i0000000NpglAAC</Id>
+      <LastModifiedDateUtcTicks>130354746430000000</LastModifiedDateUtcTicks>
+      <Hash>clZTjEziCfklgZQ7zNUkwA==</Hash>
+    </StaticZip>
+  </ItemGroup>
+  <ItemGroup>
+    <StaticZipItem Include="staticresources\ScrimsApp\448c34a56d699c29117adc64c43affeb.woff2">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\448c34a56d699c29117adc64c43affeb.woff2</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\448c34a56d699c29117adc64c43affeb.woff2</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\674f50d287a8c48dc19ba404d20fe713.eot">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\674f50d287a8c48dc19ba404d20fe713.eot</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\674f50d287a8c48dc19ba404d20fe713.eot</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\89889688147bd7575d6327160d64e760.svg">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\89889688147bd7575d6327160d64e760.svg</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\89889688147bd7575d6327160d64e760.svg</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\912ec66d7572ff821749319396470bde.svg">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\912ec66d7572ff821749319396470bde.svg</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\912ec66d7572ff821749319396470bde.svg</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\af7ae505a9eed503f8b8e6982036873e.woff2">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\af7ae505a9eed503f8b8e6982036873e.woff2</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\af7ae505a9eed503f8b8e6982036873e.woff2</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\data.json">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\data.json</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\data.json</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\humans.txt">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\humans.txt</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\humans.txt</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\android-icon-144x144.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\android-icon-144x144.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\android-icon-144x144.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\android-icon-192x192.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\android-icon-192x192.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\android-icon-192x192.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\android-icon-36x36.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\android-icon-36x36.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\android-icon-36x36.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\android-icon-48x48.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\android-icon-48x48.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\android-icon-48x48.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\android-icon-72x72.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\android-icon-72x72.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\android-icon-72x72.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\android-icon-96x96.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\android-icon-96x96.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\android-icon-96x96.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-114x114.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-114x114.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-114x114.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-120x120.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-120x120.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-120x120.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-144x144.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-144x144.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-144x144.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-152x152.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-152x152.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-152x152.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-180x180.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-180x180.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-180x180.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-57x57.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-57x57.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-57x57.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-60x60.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-60x60.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-60x60.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-72x72.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-72x72.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-72x72.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-76x76.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-76x76.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-76x76.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon-precomposed.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon-precomposed.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon-precomposed.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\apple-icon.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\apple-icon.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\apple-icon.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\browserconfig.xml">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\browserconfig.xml</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\browserconfig.xml</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\favicon-16x16.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\favicon-16x16.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\favicon-16x16.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\favicon-32x32.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\favicon-32x32.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\favicon-32x32.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\favicon-96x96.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\favicon-96x96.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\favicon-96x96.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\favicon.ico">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\favicon.ico</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\favicon.ico</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\ms-icon-144x144.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\ms-icon-144x144.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\ms-icon-144x144.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\ms-icon-150x150.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\ms-icon-150x150.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\ms-icon-150x150.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\ms-icon-310x310.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\ms-icon-310x310.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\ms-icon-310x310.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\icon\ms-icon-70x70.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\icon\ms-icon-70x70.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\icon\ms-icon-70x70.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\img\angular-logo.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\img\angular-logo.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\img\angular-logo.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\img\angularclass-avatar.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\img\angularclass-avatar.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\img\angularclass-avatar.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\img\angularclass-logo.png">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\img\angularclass-logo.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\img\angularclass-logo.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\manifest.json">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\manifest.json</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\manifest.json</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\mock-data\mock-data.json">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\mock-data\mock-data.json</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\mock-data\mock-data.json</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\robots.txt">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\robots.txt</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\robots.txt</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\service-worker.js">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\service-worker.js</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\service-worker.js</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\styles\bs-theme.scss">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\styles\bs-theme.scss</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\styles\bs-theme.scss</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\styles\superheroTheme.scss">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\styles\superheroTheme.scss</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\styles\superheroTheme.scss</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\assets\styles\superheroVariables.scss">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\assets\styles\superheroVariables.scss</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\assets\styles\superheroVariables.scss</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\b06871f281fee6b241d60582ae9369b9.ttf">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\b06871f281fee6b241d60582ae9369b9.ttf</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\b06871f281fee6b241d60582ae9369b9.ttf</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\e18bbf611f2a2e43afc071aa2f4e1512.ttf">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\e18bbf611f2a2e43afc071aa2f4e1512.ttf</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\e18bbf611f2a2e43afc071aa2f4e1512.ttf</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\f4769f9bdb7466be65088239c12046d1.eot">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\f4769f9bdb7466be65088239c12046d1.eot</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\f4769f9bdb7466be65088239c12046d1.eot</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\fa2772327f55d8198301fdb8bcfc8158.woff">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\fa2772327f55d8198301fdb8bcfc8158.woff</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\fa2772327f55d8198301fdb8bcfc8158.woff</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\fee66e712a8a08eef5805a46892932ad.woff">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\fee66e712a8a08eef5805a46892932ad.woff</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\fee66e712a8a08eef5805a46892932ad.woff</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\humans.txt">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\humans.txt</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\humans.txt</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\index.html">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\index.html</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\index.html</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\main.bundle.js">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\main.bundle.js</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\main.bundle.js</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\polyfills.bundle.js">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\polyfills.bundle.js</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\polyfills.bundle.js</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\robots.txt">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\robots.txt</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\robots.txt</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\vendor.bundle.js">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\vendor.bundle.js</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\vendor.bundle.js</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\web.config">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\web.config</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\web.config</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\ScrimsApp\webpack-assets.json">
+      <PhysicalRelativePath>resource-bundles\ScrimsApp\webpack-assets.json</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>ScrimsApp</StaticResource>
+      <StaticResourcePath>staticresources\ScrimsApp\webpack-assets.json</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\clock.png">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\clock.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\clock.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\construction.png">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\construction.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\construction.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\force_logo.gif">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\force_logo.gif</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\force_logo.gif</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\maintenance.png">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\maintenance.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\maintenance.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\poweredby.png">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\poweredby.png</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\poweredby.png</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\tools.gif">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\tools.gif</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\tools.gif</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\unauthorized.gif">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\unauthorized.gif</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\unauthorized.gif</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\img\warning.gif">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\img\warning.gif</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\img\warning.gif</StaticResourcePath>
+    </StaticZipItem>
+    <StaticZipItem Include="staticresources\SiteSamples\SiteStyles.css">
+      <PhysicalRelativePath>resource-bundles\SiteSamples\SiteStyles.css</PhysicalRelativePath>
+      <SubType>StaticResourceZipItem</SubType>
+      <StaticResource>SiteSamples</StaticResource>
+      <StaticResourcePath>staticresources\SiteSamples\SiteStyles.css</StaticResourcePath>
+    </StaticZipItem>
+  </ItemGroup>
+  <ItemGroup>
+    <Static Include="staticresources\angular_min_js.resource">
+      <PhysicalRelativePath>resource-bundles\angular_min_js.resource</PhysicalRelativePath>
+      <SubType>StaticResource</SubType>
+      <Id>081i00000011iXeAAI</Id>
+      <LastModifiedDateUtcTicks>131123166900000000</LastModifiedDateUtcTicks>
+      <Hash>ec6ZpUN7wY+sYMer6NaGTQ==</Hash>
+    </Static>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="classes\Scrims_ProjectBatch.cls-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectBatch.cls-meta.xml</PhysicalRelativePath>
+      <Hash>uusv40XDo7W7TGVJTExSOQ==</Hash>
+      <LastModifiedDateUtcTicks>131351254030000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>classes\Scrims_ProjectBatch.cls</DependentUpon>
+    </None>
+    <None Include="classes\Scrims_ProjectQueueble.cls-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectQueueble.cls-meta.xml</PhysicalRelativePath>
+      <Hash>uusv40XDo7W7TGVJTExSOQ==</Hash>
+      <LastModifiedDateUtcTicks>131351141970000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>classes\Scrims_ProjectQueueble.cls</DependentUpon>
+    </None>
+    <None Include="classes\Scrims_ProjectSchedulable.cls-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectSchedulable.cls-meta.xml</PhysicalRelativePath>
+      <Hash>uusv40XDo7W7TGVJTExSOQ==</Hash>
+      <LastModifiedDateUtcTicks>131351282650000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>classes\Scrims_ProjectSchedulable.cls</DependentUpon>
+    </None>
+    <None Include="classes\Scrims_ProjectService.cls-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\classes\Scrims_ProjectService.cls-meta.xml</PhysicalRelativePath>
+      <Hash>uusv40XDo7W7TGVJTExSOQ==</Hash>
+      <LastModifiedDateUtcTicks>131352152860000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>classes\Scrims_ProjectService.cls</DependentUpon>
+    </None>
+
+   
+    <None Include="pages\ScrimsMain.page-meta.xml">
+      <PhysicalRelativePath>src\pages\ScrimsMain.page-meta.xml</PhysicalRelativePath>
+      <SubType>Metadata</SubType>
+      <LastModifiedDateUtcTicks>131347761450000000</LastModifiedDateUtcTicks>
+      <Hash>r6tcY42SAvfnskpY0aRx0A==</Hash>
+      <DependentUpon>pages\ScrimsMain.page</DependentUpon>
+    </None>
+    <None Include="pages\ScrimsTest.page-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\pages\ScrimsTest.page-meta.xml</PhysicalRelativePath>
+      <Hash>CV/mbjR7uNWhYxbLx1VCyw==</Hash>
+      <LastModifiedDateUtcTicks>131347794940000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>pages\ScrimsTest.page</DependentUpon>
+    </None>
+    <None Include="pages\Scrims_QueueTest.page-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\pages\Scrims_QueueTest.page-meta.xml</PhysicalRelativePath>
+      <Hash>5JbOUL0SnDetlNGzBpOlIw==</Hash>
+      <LastModifiedDateUtcTicks>131352155050000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>pages\Scrims_QueueTest.page</DependentUpon>
+    </None>
+    <None Include="triggers\Scrims_Project.trigger-meta.xml">
+      <SubType>Metadata</SubType>
+      <PhysicalRelativePath>src\triggers\Scrims_Project.trigger-meta.xml</PhysicalRelativePath>
+      <Hash>zLjFDeBzwhkzS7Zig+qYZg==</Hash>
+      <LastModifiedDateUtcTicks>131351135720000000</LastModifiedDateUtcTicks>
+      <MetadataType>Metadata</MetadataType>
+      <DependentUpon>triggers\Scrims_Project.trigger</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="objects\Scrims_QueueData__c.object">
+      <SubType>Object</SubType>
+      <PhysicalRelativePath>src\objects\Scrims_QueueData__c.object</PhysicalRelativePath>
+      <Id>01I0j0000004QMpEAM</Id>
+      <Hash>ldKjqHF177ZKwypeKy+cyw==</Hash>
+      <LastModifiedDateUtcTicks>131351252364940937</LastModifiedDateUtcTicks>
+      <MetadataType>CustomObject</MetadataType>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Soql Include="Soql\QueueSelect.soql">
+      <SubType>Soql</SubType>
+      <PhysicalRelativePath>Soql\QueueSelect.soql</PhysicalRelativePath>
+    </Soql>
+  </ItemGroup>
+  <ItemGroup>
+    <AnonymousApex Include="AnonymousApex\Test.anonymous">
+      <SubType>AnonymousApex</SubType>
+      <PhysicalRelativePath>AnonymousApex\Test.anonymous</PhysicalRelativePath>
+    </AnonymousApex>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Build.targets" />
+</Project>

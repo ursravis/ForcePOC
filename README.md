@@ -10,8 +10,7 @@ To use this code:
      
      Queue        -- Scrims_ProjectQueueble.cls
      
-     Scheduling   -- Scrims_ProjectBatch.cls     
-                     Scrims_ProjectSchedulable.cls
+     Scheduling   -- Scrims_ProjectBatch.cls, Scrims_ProjectSchedulable.cls
                      
                      
 4) Find all Visual Force pages in the folder ScrimsSandbox/src/pages/

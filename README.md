@@ -5,10 +5,15 @@ To use this code:
 2) Use your own credentials to connect to Salesforce devlopment sandbox (Optional for Review)
     
 3) Find all Apex classes in the folder ScrimsSandbox/src/classes/
+
      Rest Service -- Scrims_ProjectService.cls
+     
      Queue        -- Scrims_ProjectQueueble.cls
+     
      Scheduling   -- Scrims_ProjectBatch.cls
+     
                      Scrims_ProjectSchedulable.cls
+                     
                      
 4) Find all Visual Force pages in the folder ScrimsSandbox/src/pages/
      Angular2 App           -- ScrimsMain.page
